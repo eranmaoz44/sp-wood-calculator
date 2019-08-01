@@ -1,4 +1,9 @@
+import collections
 
+
+def order_function(key):
+    split = key.split('/')
+    return float(split[1])*1000 + float(split[0])
 
 def add_to_dict(dict, key, amount):
     if not key in dict:
@@ -7,7 +12,7 @@ def add_to_dict(dict, key, amount):
 
 
 if __name__ == '__main__':
-    beds = [('full', 160, 200), ('windows', 140, 190), ('full', 180, 200), ('windows', 180, 190)]
+    beds = [('windows', 90, 190), ('windows', 90, 190), ('windows', 140, 190), ('windows', 140, 190), ('full', 90, 200)]
     counter = {}
     for bed in beds:
         add_to_dict(counter, '{0}/14.5/3.2'.format(bed[1] + 10), 4)
@@ -17,7 +22,10 @@ if __name__ == '__main__':
             add_to_dict(counter, '{0}/7/3.2'.format(bed[1] + 10), 2)
             add_to_dict(counter, '35/14.5/3.2', 2)
         elif bed[0] == 'windows':
-            add_to_dict(counter, '{0}/7/3.2'.format(round((bed[1] + 10 - 29)/5.0)), 4)
+            if bed[1] >= 120:
+                add_to_dict(counter, '{0}/7/3.2'.format(round((bed[1] + 10 - 29)/5.0)), 4)
+            else:
+                add_to_dict(counter, '24/7/3.2', 2)
             add_to_dict(counter, '45/14.5/3.2', 2)
         add_to_dict(counter, '{0}/14.5/3.2'.format(bed[2]), 2)
         if bed[2] == 190:
@@ -38,4 +46,4 @@ if __name__ == '__main__':
         elif bed[2] == 200:
             add_to_dict(counter, '{0}/9.2/2'.format(bed[1]), 11)
 
-    print(str(counter).replace(',', ',\n'))
+    print(str(sorted(counter.items(), key=lambda x: order_function(x[0]), reverse=True)).replace(',', ',\n'))

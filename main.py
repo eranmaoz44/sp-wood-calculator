@@ -12,7 +12,7 @@ def add_to_dict(dict, key, amount):
 
 
 if __name__ == '__main__':
-    beds = [('windows', 90, 190), ('windows', 90, 190), ('windows', 140, 190), ('windows', 140, 190), ('full', 90, 200)]
+    beds = [('windows', 140, 190), ('windows', 140, 190), ('windows', 140, 190), ('windows', 140, 190), ('full', 160, 200), ('windows', 120, 190)]
     counter = {}
     for bed in beds:
         add_to_dict(counter, '{0}/14.5/3.2'.format(bed[1] + 10), 4)
@@ -46,4 +46,8 @@ if __name__ == '__main__':
         elif bed[2] == 200:
             add_to_dict(counter, '{0}/9.2/2'.format(bed[1]), 11)
 
-    print(str(sorted(counter.items(), key=lambda x: order_function(x[0]), reverse=True)).replace(',', ',\n'))
+    #print(str(sorted(counter.items(), key=lambda x: order_function(x[0]), reverse=True)).replace(',', ',\n'))
+
+    for wow in sorted(counter.items(), key=lambda x: order_function(x[0]), reverse=True):
+        y = wow[0].split('/')
+        print('אורן מוקצע פ.ע.               {0}              {1}               {2}'.format(y[1] + '/' + y[2], y[0], wow[1]))

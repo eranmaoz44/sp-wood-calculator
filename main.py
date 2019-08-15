@@ -12,7 +12,7 @@ def add_to_dict(dict, key, amount):
 
 
 if __name__ == '__main__':
-    beds = [('windows', 140, 190), ('windows', 140, 190), ('windows', 140, 190), ('windows', 140, 190), ('full', 160, 200), ('windows', 120, 190)]
+    beds = [('full', 160, 200), ('windows', 160, 200)]
     counter = {}
     for bed in beds:
         add_to_dict(counter, '{0}/14.5/3.2'.format(bed[1] + 10), 4)

@@ -70,8 +70,8 @@ if __name__ == '__main__':
     # beds = [('full', 180, 200), ('full', 140, 190), ('windows', 140, 190), ('windows', 160, 190), ('full', 120, 190),
     #         ('full', 180, 200)]
     beds = [('windows', 160, 200), ('windows', 160, 190), ('full', 160, 190), ('full', 160, 200),
-            ('windows', 140, 190), ('full', 140, 190), ('full', 120, 190), ('full', 80, 190),
-            ('full', 90, 200), ('full', 180, 200)]
+            ('windows', 140, 190), ('full', 140, 190), ('full', 140, 200),('full', 140, 200), ('full', 120, 190), ('full', 80, 190),
+            ('full', 90, 200), ('full', 180, 200), ('full', 180, 200)]
     # beds = []
     counter = {}
     for bed in beds:
@@ -107,7 +107,7 @@ if __name__ == '__main__':
             add_to_dict(counter, '{0}/9.2/2'.format(bed[1]), 11)
 
     # bed_heads = [('C', 160), ('C', 140), ('C', 180), ('C', 140)]
-    bed_heads = [('C', 120), ('C', 140), ('C', 160), ('C', 180), ('full', 140), ('full', 160), ('D', 140)]
+    bed_heads = [('C', 120), ('C', 140), ('C', 140), ('C', 160), ('C', 160), ('C', 180), ('full', 140), ('full', 160), ('D', 140), ('D', 160)]
 
     # bed_heads = []
     for bed_head in bed_heads:

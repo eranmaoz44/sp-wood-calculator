@@ -207,7 +207,12 @@ if __name__ == '__main__':
         add_to_dict(counter, '{0}/14.5/3.2'.format(framed_jewish_bed[2]), 1)
         add_to_dict(counter, '{0}/14.5/3.2'.format(framed_jewish_bed[2] - 1), 1)
 
-    # print(str(sorted(counter.items(), key=lambda x: order_function(x[0]), reverse=True)).replace(',', ',\n'))
+
+    framed_preach_beds = [('4pillows', 140, 190)]
+
+    #for framed_preach_bed in framed_jewish_beds:
+
+    #print(str(sorted(counter.items(), key=lambda x: order_function(x[0]), reverse=True)).replace(',', ',\n'))
 
     counter_sorted = sorted(counter.items(), key=lambda x: order_function(x[0]), reverse=True)
 

@@ -1,4 +1,4 @@
-from WoodBeams.LegWoodBeam import LegWoodBeam
+from WoodBeams.BedHead.LegPart import LegWoodBeam
 
 
 def play():

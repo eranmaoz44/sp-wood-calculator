@@ -3,6 +3,8 @@ import collections
 existing_pieces = \
     [('180/19.5/3.2', 2),
      ('160/19.5/3.2', 6),
+     ('170/19.5/3.2', 6),
+     ('150/19.5/3.2', 0),
      ('140/19.5/3.2', 0),
      ('120/19.5/3.2', 2),
      ('100/19.5/3.2', 0),
@@ -139,10 +141,7 @@ def add_to_dict(dict, key, amount):
 
 if __name__ == '__main__':
 
-    beds = [ ('full', 80, 190), ('full', 90, 200), ('full', 120, 190), ('D', 120, 200),
-             ('windows', 140, 190), ('D', 140, 190), ('full', 140, 200), ('full', 140, 200),
-             ('windows', 160, 200), ('D', 160, 190), ('full', 160, 190), ('full', 160, 200),
-             ('full', 180, 200), ('D', 180, 200)]
+    beds = [ ('full', 140, 200), ('full', 140, 190), ('full', 180, 200)]
 
     counter = {}
     for bed in beds:
@@ -182,11 +181,9 @@ if __name__ == '__main__':
 
     # bed_heads = [('C', 160), ('C', 140), ('C', 180), ('C', 140)]
 
-    bed_heads = [('C', 120), ('C', 140), ('C', 160), ('C', 180),
-                 ('full', 140), ('full', 160),
-                 ('D', 120), ('D', 140), ('D', 160), ('D', 180),
-                 ('4pillows', 120), ('4pillows', 140), ('4pillows', 140),
-                 ('4pillows', 160), ('4pillows', 160), ('4pillows', 180), ('4pillows', 180)]
+    bed_heads = [('full', 150),
+                 ('D', 170), ('D', 140), ('D', 140),
+                 ('4pillows', 170), ('4pillows', 150)]
     #bed_heads = []
     for bed_head in bed_heads:
         if bed_head[0] == 'full':
@@ -212,8 +209,8 @@ if __name__ == '__main__':
             add_to_dict(counter, '90/14.5/3.2', 2)
 
 
-    framed_jewish_beds = [('full', 180, 200), ('windows', 160, 190), ('full', 160, 190)]
-    #framed_jewish_beds = []
+    #framed_jewish_beds = [('full', 180, 200), ('windows', 160, 190), ('full', 160, 190)]
+    framed_jewish_beds = []
     for framed_jewish_bed in framed_jewish_beds:
         add_to_dict(counter, '{0}/14.5/3.2'.format(framed_jewish_bed[1] + 10), 4)
         add_to_dict(counter, '{0}/3.2/3.2'.format(framed_jewish_bed[1] + 10), 1)
@@ -227,7 +224,7 @@ if __name__ == '__main__':
         add_to_dict(counter, '{0}/14.5/3.2'.format(framed_jewish_bed[2] - 1), 1)
 
 
-    framed_preach_beds = [(90, 190), (120, 190), (140, 190), (140, 190), (160, 200), (160, 200), (180, 200), (180, 200)]
+    framed_preach_beds = [(160, 200), (160, 200), (140, 190), (140, 190), (140, 190), (180,200)]
 
     for framed_preach_bed in framed_preach_beds:
         add_to_dict(counter, '{0}/14.5/3.2'.format(framed_preach_bed[1]), 2)
